@@ -1,4 +1,4 @@
-genres = [
+GENRES = [
     "acoustic",
     "afrobeat",
     "alt-rock",
