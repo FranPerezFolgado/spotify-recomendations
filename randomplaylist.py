@@ -48,7 +48,7 @@ def add_songs_to_playlist(sp: spotipy.Spotify, uris, playlist):
         items=uris,
         playlist_id=playlist['id'])
 
-def main():
+def generateRandomPlaylist():
     sp = create_connection()
     top_artists = get_current_top_artist(sp)
     listened_genres = obtain_genres(top_artists)
@@ -56,8 +56,10 @@ def main():
     uris = find_tracks(sp, not_listened_genres)
     playlist = create_playlist(sp)
     add_songs_to_playlist(sp, uris=uris, playlist=playlist)
+    return playlist['external_urls']['spotify']
     
 
 
 if __name__ == "__main__":
-    main()
+    print(main())
+    
